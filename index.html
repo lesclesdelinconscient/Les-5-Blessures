@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Test des 5 blessures</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    h1 { text-align: center; }
+    .question { margin-bottom: 20px; }
+    button { display: block; margin: 10px 0; }
+    #result { font-size: 1.2em; margin-top: 30px; font-weight: bold; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <h1>Test des 5 Blessures Émotionnelles</h1>
+
+  <form id="quizForm">
+    <!-- Questions -->
+    <div class="question" data-question="1">
+      <p>Question 1 :</p>
+      <label><input type="radio" name="q1" value="A"> Réponse A</label><br>
+      <label><input type="radio" name="q1" value="B"> Réponse B</label><br>
+      <label><input type="radio" name="q1" value="C"> Réponse C</label><br>
+      <label><input type="radio" name="q1" value="D"> Réponse D</label><br>
+      <label><input type="radio" name="q1" value="E"> Réponse E</label>
+    </div>
+
+    <div class="question" data-question="2">
+      <p>Question 2 :</p>
+      <label><input type="radio" name="q2" value="A"> Réponse A</label><br>
+      <label><input type="radio" name="q2" value="B"> Réponse B</label><br>
+      <label><input type="radio" name="q2" value="C"> Réponse C</label><br>
+      <label><input type="radio" name="q2" value="D"> Réponse D</label><br>
+      <label><input type="radio" name="q2" value="E"> Réponse E</label>
+    </div>
+
+    <div class="question" data-question="3">
+      <p>Question 3 :</p>
+      <label><input type="radio" name="q3" value="A"> Réponse A</label><br>
+      <label><input type="radio" name="q3" value="B"> Réponse B</label><br>
+      <label><input type="radio" name="q3" value="C"> Réponse C</label><br>
+      <label><input type="radio" name="q3" value="D"> Réponse D</label><br>
+      <label><input type="radio" name="q3" value="E"> Réponse E</label>
+    </div>
+
+    <div class="question" data-question="4">
+      <p>Question 4 :</p>
+      <label><input type="radio" name="q4" value="A"> Réponse A</label><br>
+      <label><input type="radio" name="q4" value="B"> Réponse B</label><br>
+      <label><input type="radio" name="q4" value="C"> Réponse C</label><br>
+      <label><input type="radio" name="q4" value="D"> Réponse D</label><br>
+      <label><input type="radio" name="q4" value="E"> Réponse E</label>
+    </div>
+
+    <div class="question" data-question="5">
+      <p>Question 5 :</p>
+      <label><input type="radio" name="q5" value="A"> Réponse A</label><br>
+      <label><input type="radio" name="q5" value="B"> Réponse B</label><br>
+      <label><input type="radio" name="q5" value="C"> Réponse C</label><br>
+      <label><input type="radio" name="q5" value="D"> Réponse D</label><br>
+      <label><input type="radio" name="q5" value="E"> Réponse E</label>
+    </div>
+
+    <div class="question" data-question="6">
+      <p>Question 6 :</p>
+      <label><input type="radio" name="q6" value="A"> Réponse A</label><br>
+      <label><input type="radio" name="q6" value="B"> Réponse B</label><br>
+      <label><input type="radio" name="q6" value="C"> Réponse C</label><br>
+      <label><input type="radio" name="q6" value="D"> Réponse D</label><br>
+      <label><input type="radio" name="q6" value="E"> Réponse E</label>
+    </div>
+
+    <button type="submit">Voir mon résultat</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const results = {
+      A: "La Blessure de Rejet",
+      B: "La Blessure d'Humiliation",
+      C: "La Blessure de Trahison",
+      D: "La Blessure d'Injustice",
+      E: "La Blessure d'Abandon"
+    };
+
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const counts = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+      for (let i = 1; i <= 6; i++) {
+        const val = document.querySelector(`input[name="q${i}"]:checked`);
+        if (val) counts[val.value]++;
+      }
+
+      const max = Math.max(...Object.values(counts));
+      const topAnswers = Object.keys(counts).filter(k => counts[k] === max);
+
+      const resultText = topAnswers.length === 1
+        ? `Résultat : ${results[topAnswers[0]]}`
+        : `Résultat partagé entre : ${topAnswers.map(a => results[a]).join(", ")}`;
+
+      document.getElementById("result").innerText = resultText;
+    });
+  </script>
+</body>
+</html>
