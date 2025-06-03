@@ -1,107 +1,113 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Test des 5 blessures</title>
+  <title>Test des 5 Blessures</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: auto; }
     h1 { text-align: center; }
-    .question { margin-bottom: 20px; }
-    button { display: block; margin: 10px 0; }
-    #result { font-size: 1.2em; margin-top: 30px; font-weight: bold; text-align: center; }
+    .question { margin-bottom: 30px; }
+    label { display: block; margin: 4px 0; }
+    button { margin-top: 20px; padding: 10px 15px; font-size: 1em; }
+    #result { font-size: 1.3em; margin-top: 30px; font-weight: bold; text-align: center; }
   </style>
 </head>
 <body>
 
-  <h1>Test des 5 Blessures Émotionnelles</h1>
+<h1>Test des 5 Blessures Émotionnelles</h1>
 
-  <form id="quizForm">
-    <!-- Questions -->
-    <div class="question" data-question="1">
-      <p>Question 1 :</p>
-      <label><input type="radio" name="q1" value="A"> Réponse A</label><br>
-      <label><input type="radio" name="q1" value="B"> Réponse B</label><br>
-      <label><input type="radio" name="q1" value="C"> Réponse C</label><br>
-      <label><input type="radio" name="q1" value="D"> Réponse D</label><br>
-      <label><input type="radio" name="q1" value="E"> Réponse E</label>
-    </div>
+<form id="quizForm">
 
-    <div class="question" data-question="2">
-      <p>Question 2 :</p>
-      <label><input type="radio" name="q2" value="A"> Réponse A</label><br>
-      <label><input type="radio" name="q2" value="B"> Réponse B</label><br>
-      <label><input type="radio" name="q2" value="C"> Réponse C</label><br>
-      <label><input type="radio" name="q2" value="D"> Réponse D</label><br>
-      <label><input type="radio" name="q2" value="E"> Réponse E</label>
-    </div>
+  <div class="question">
+    <p><strong>1. Quel est ton masque du moment ?</strong></p>
+    <label><input type="radio" name="q1" value="A"> Le fuyant</label>
+    <label><input type="radio" name="q1" value="B"> Le masochiste</label>
+    <label><input type="radio" name="q1" value="C"> Le contrôlant</label>
+    <label><input type="radio" name="q1" value="D"> La victime</label>
+    <label><input type="radio" name="q1" value="E"> Le dépendant</label>
+  </div>
 
-    <div class="question" data-question="3">
-      <p>Question 3 :</p>
-      <label><input type="radio" name="q3" value="A"> Réponse A</label><br>
-      <label><input type="radio" name="q3" value="B"> Réponse B</label><br>
-      <label><input type="radio" name="q3" value="C"> Réponse C</label><br>
-      <label><input type="radio" name="q3" value="D"> Réponse D</label><br>
-      <label><input type="radio" name="q3" value="E"> Réponse E</label>
-    </div>
+  <div class="question">
+    <p><strong>2. De quoi as-tu le plus peur ?</strong></p>
+    <label><input type="radio" name="q2" value="A"> Paniquer, déranger, ne pas faire face</label>
+    <label><input type="radio" name="q2" value="B"> Faire/Avoir honte, exprimer mes désirs, la liberté</label>
+    <label><input type="radio" name="q2" value="C"> Séparation, reniement, engagement</label>
+    <label><input type="radio" name="q2" value="D"> Me tromper, prendre du poids, être jugé.e</label>
+    <label><input type="radio" name="q2" value="E"> La solitude, que l'on me dise "non"</label>
+  </div>
 
-    <div class="question" data-question="4">
-      <p>Question 4 :</p>
-      <label><input type="radio" name="q4" value="A"> Réponse A</label><br>
-      <label><input type="radio" name="q4" value="B"> Réponse B</label><br>
-      <label><input type="radio" name="q4" value="C"> Réponse C</label><br>
-      <label><input type="radio" name="q4" value="D"> Réponse D</label><br>
-      <label><input type="radio" name="q4" value="E"> Réponse E</label>
-    </div>
+  <div class="question">
+    <p><strong>3. Quels mots reviennent souvent dans tes pensées et/ou discours ?</strong></p>
+    <label><input type="radio" name="q3" value="A"> Nul, rien, disparaître, inexistant</label>
+    <label><input type="radio" name="q3" value="B"> Digne, indigne, gros, petit, sale</label>
+    <label><input type="radio" name="q3" value="C"> Capable, confiance, je sais, je maîtrise</label>
+    <label><input type="radio" name="q3" value="D"> Juste, toujours, jamais, bien, mal</label>
+    <label><input type="radio" name="q3" value="E"> Absent, seul, on ne me lâche pas</label>
+  </div>
 
-    <div class="question" data-question="5">
-      <p>Question 5 :</p>
-      <label><input type="radio" name="q5" value="A"> Réponse A</label><br>
-      <label><input type="radio" name="q5" value="B"> Réponse B</label><br>
-      <label><input type="radio" name="q5" value="C"> Réponse C</label><br>
-      <label><input type="radio" name="q5" value="D"> Réponse D</label><br>
-      <label><input type="radio" name="q5" value="E"> Réponse E</label>
-    </div>
+  <div class="question">
+    <p><strong>4. Quelle est ta tendance du moment ?</strong></p>
+    <label><input type="radio" name="q4" value="A"> Sensible aux remarques, isolement, se croit sans valeur</label>
+    <label><input type="radio" name="q4" value="B"> Se dévalorise, hypersensible, prend soin des autres</label>
+    <label><input type="radio" name="q4" value="C"> Veut tout gérer, sportif.ve, impatient.e</label>
+    <label><input type="radio" name="q4" value="D"> Strict.e, perfectionniste, exigeant.e</label>
+    <label><input type="radio" name="q4" value="E"> Attire l'attention, dramatise, recherche d'approbation</label>
+  </div>
 
-    <div class="question" data-question="6">
-      <p>Question 6 :</p>
-      <label><input type="radio" name="q6" value="A"> Réponse A</label><br>
-      <label><input type="radio" name="q6" value="B"> Réponse B</label><br>
-      <label><input type="radio" name="q6" value="C"> Réponse C</label><br>
-      <label><input type="radio" name="q6" value="D"> Réponse D</label><br>
-      <label><input type="radio" name="q6" value="E"> Réponse E</label>
-    </div>
+  <div class="question">
+    <p><strong>5. Le plus souvent, de quoi souffres-tu ?</strong></p>
+    <label><input type="radio" name="q5" value="A"> Problèmes de peau, allergies, dépression</label>
+    <label><input type="radio" name="q5" value="B"> Maux de gorge, TCA, problèmes cardiaques</label>
+    <label><input type="radio" name="q5" value="C"> Douleurs articulaires, inflammations</label>
+    <label><input type="radio" name="q5" value="D"> Constipation, insomnies, infections</label>
+    <label><input type="radio" name="q5" value="E"> Addictions, problèmes respiratoires</label>
+  </div>
 
-    <button type="submit">Voir mon résultat</button>
-  </form>
+  <div class="question">
+    <p><strong>6. Quels sont tes talents naturels ?</strong></p>
+    <label><input type="radio" name="q6" value="A"> Création, efficacité, endurance</label>
+    <label><input type="radio" name="q6" value="B"> Audace, organisation, altruisme</label>
+    <label><input type="radio" name="q6" value="C"> Dirigeant.e, compréhension rapide, confiant.e</label>
+    <label><input type="radio" name="q6" value="D"> Simplifier les choses, être juste</label>
+    <label><input type="radio" name="q6" value="E"> Autonomie, amabilité, décider seul.e</label>
+  </div>
 
-  <div id="result"></div>
+  <button type="submit">Voir mon résultat</button>
+</form>
 
-  <script>
-    const results = {
-      A: "La Blessure de Rejet",
-      B: "La Blessure d'Humiliation",
-      C: "La Blessure de Trahison",
-      D: "La Blessure d'Injustice",
-      E: "La Blessure d'Abandon"
-    };
+<div id="result"></div>
 
-    document.getElementById("quizForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const counts = { A: 0, B: 0, C: 0, D: 0, E: 0 };
-      for (let i = 1; i <= 6; i++) {
-        const val = document.querySelector(`input[name="q${i}"]:checked`);
-        if (val) counts[val.value]++;
-      }
+<script>
+  const results = {
+    A: "🌱 Ta blessure principale est **le rejet**.",
+    B: "💔 Ta blessure principale est **l'humiliation**.",
+    C: "⚡️ Ta blessure principale est **la trahison**.",
+    D: "⚖️ Ta blessure principale est **l'injustice**.",
+    E: "🫂 Ta blessure principale est **l'abandon**."
+  };
 
-      const max = Math.max(...Object.values(counts));
-      const topAnswers = Object.keys(counts).filter(k => counts[k] === max);
+  document.getElementById("quizForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const counts = { A: 0, B: 0, C: 0, D: 0, E: 0 };
 
-      const resultText = topAnswers.length === 1
-        ? `Résultat : ${results[topAnswers[0]]}`
-        : `Résultat partagé entre : ${topAnswers.map(a => results[a]).join(", ")}`;
+    for (let i = 1; i <= 6; i++) {
+      const val = document.querySelector(`input[name="q${i}"]:checked`);
+      if (val) counts[val.value]++;
+    }
 
-      document.getElementById("result").innerText = resultText;
-    });
-  </script>
+    const max = Math.max(...Object.values(counts));
+    const topAnswers = Object.keys(counts).filter(k => counts[k] === max);
+
+    const resultText = topAnswers.length === 1
+      ? `Résultat : ${results[topAnswers[0]]}`
+      : `Résultat partagé entre : ${topAnswers.map(a => results[a]).join(", ")}`;
+
+    document.getElementById("result").innerHTML = resultText;
+  });
+</script>
+
 </body>
 </html>
+
+
+---
